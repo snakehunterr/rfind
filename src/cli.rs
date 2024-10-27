@@ -10,6 +10,12 @@ pub enum FileType {
     CharDevice,
 }
 
+/// The command-line arguments for the application.
+///
+/// This struct defines the various command-line arguments that the application
+/// accepts, including the path to search, a regular expression pattern, whether
+/// to search recursively, the file type to filter by, and whether to print
+/// errors.
 #[derive(Debug, Parser)]
 #[command(version, about)]
 pub struct CliArgs {

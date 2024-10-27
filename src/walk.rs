@@ -1,5 +1,17 @@
 use std::{fs, io, path};
 
+/// Recursively walks a directory and its subdirectories, calling the provided
+/// `out_func` callback for each file that passes the `filter_func` check.
+///
+/// # Arguments
+/// * `path` - The path to the directory to walk.
+/// * `out_func` - A callback function that will be called for each file that passes the filter.
+/// * `filter_func` - A callback function that determines whether a file should be included.
+/// * `error_func` - An optional callback function that will be called if an error occurs during the walk.
+/// * `recursive` - Whether to recursively walk subdirectories.
+///
+/// # Errors
+/// This function will return an error if there is a problem reading the directory or its contents.
 pub fn walk(
     path: path::PathBuf,
     out_func: &dyn Fn(&path::PathBuf, &String),

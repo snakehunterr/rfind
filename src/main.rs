@@ -7,6 +7,13 @@ mod cli;
 mod utils;
 mod walk;
 
+/// The main entry point for the application.
+///
+/// This function parses the command-line arguments, creates a regular expression
+/// from the provided pattern, and then walks the specified directory (or the
+/// current directory if none is provided) to find files that match the pattern.
+/// If any errors occur during the file walking process, they are printed to
+/// stderr, and the program exits with a non-zero exit code.
 fn main() {
     let cli_args = cli::CliArgs::parse();
 
